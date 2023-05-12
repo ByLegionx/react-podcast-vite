@@ -9,65 +9,53 @@ import { getPodcastMinutes } from '../helpers/getPodcastMinutes';
 import { PodCastNavbar } from '../../songs/components/PodCastNavbar';
 import { PodcastTable } from '../../songs/components/PodcastTable';
 
-import "../styles/podCastStyle.css";
-
-
+import '../styles/podCastStyle.css';
 
 export const PodCastInfoPage = () => {
-  
-  const {contextState, setContextState} = useAppContext();
-  const [response, setResponse] = useState([])
+  const { contextState, setContextState } = useAppContext();
+  const [response, setResponse] = useState([]);
 
-  
-  const {id} = useParams();
+  const { id } = useParams();
 
-  const podcast = useMemo(()=>getPodCastById(id,contextState), [id]);
+  const podcast = useMemo(() => getPodCastById(id, contextState), [id]);
 
-
-
-  
   useEffect(() => {
-    
-    if(response.length>0){
+    if (response.length > 0) {
       setContextState({
         ...contextState,
-        
-        Loading: false,
-      })
 
+        Loading: false,
+      });
     }
-  }, [response])
-  
+  }, [response]);
 
   useEffect(() => {
-
     setContextState({
       ...contextState,
-      actualView: "Vista detalle",
+      actualView: 'Vista detalle',
       ActualViewPodCasts: [podcast],
       Loading: true,
-    })
+    });
 
     const getAllMinutes = async () => {
-
-      await getPodcastMinutes(setResponse, podcast['id']['attributes']['im:id'])
-      
-    }
+      await getPodcastMinutes(
+        setResponse,
+        podcast['id']['attributes']['im:id']
+      );
+    };
     getAllMinutes();
-  }, [])
+  }, []);
 
   return (
-    <div className='main-div-container'>
-      <PodCaster/>
-      <div className='div-main-container'>
-      <PodCastNavbar/>
-  
-        <div className='episodes-container'>
-          <PodcastTable response = {response}/>
+    <div className="main-div-container">
+      <PodCaster />
+      <div className="div-main-container">
+        <PodCastNavbar />
+
+        <div className="episodes-container">
+          <PodcastTable response={response} />
         </div>
       </div>
-
     </div>
-  )
-}
-
+  );
+};

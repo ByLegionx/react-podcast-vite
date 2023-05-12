@@ -5,12 +5,11 @@ import { MemoryRouter } from 'react-router-dom';
 import { ContextProvider } from '../../context/ContextProvider';
 import { PodCaster } from '../../songs/components/PodCaster';
 
-
 test('Clicking on PodCaster component redirects to the main route', () => {
   render(
     <MemoryRouter>
-        <ContextProvider>
-            <PodCaster />
+      <ContextProvider>
+        <PodCaster />
       </ContextProvider>
     </MemoryRouter>
   );

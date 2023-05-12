@@ -6,7 +6,6 @@ import { useAppContext } from '../../context/ContextProvider';
 import { PodCastCard } from '../../songs/components/PodCastCard';
 import { PodCaster } from '../../songs/components/PodCaster';
 
-
 export const ActualView = () => {
   const { contextState, setContextState } = useAppContext();
   const { allSongsList } = useFetchSongs();
@@ -17,7 +16,7 @@ export const ActualView = () => {
     setContextState({
       ...contextState,
       AllPodCasts: allSongsList,
-      Loading: false
+      Loading: false,
     });
   }, [allSongsList]);
 
@@ -58,10 +57,7 @@ export const ActualView = () => {
         <div className="container-fourSongs">
           <div data-testid="songs-container" className="songs-container">
             {filteredList.map((song) => (
-              <PodCastCard
-                key={song['id']['attributes']['im:id']}
-                {...song}
-              />
+              <PodCastCard key={song['id']['attributes']['im:id']} {...song} />
             ))}
           </div>
         </div>
