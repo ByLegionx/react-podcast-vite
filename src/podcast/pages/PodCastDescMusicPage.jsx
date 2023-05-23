@@ -37,7 +37,10 @@ export const PodCastDescMusicPage = () => {
         ...contextState,
         Loading: false
       });
-      const foundPodcast = response.filter(podcast => podcast.trackId === epId);
+
+      const foundPodcast = response.filter(
+        podcast => podcast.trackId.toString() === epId
+      );
       setEpisode(foundPodcast);
     }
   }, [response]);
