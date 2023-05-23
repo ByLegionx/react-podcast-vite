@@ -24,7 +24,7 @@ export const PodCastInfoPage = () => {
       setContextState({
         ...contextState,
 
-        Loading: false,
+        Loading: false
       });
     }
   }, [response]);
@@ -34,7 +34,7 @@ export const PodCastInfoPage = () => {
       ...contextState,
       actualView: 'Vista detalle',
       ActualViewPodCasts: [podcast],
-      Loading: true,
+      Loading: true
     });
 
     const getAllMinutes = async () => {

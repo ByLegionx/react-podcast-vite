@@ -11,7 +11,7 @@ export const ContextProvider = ({ children }) => {
     actualView: 'Vista principal',
     AllPodCasts: [],
     ActualViewPodCasts: [],
-    Loading: true,
+    Loading: true
   });
 
   return (

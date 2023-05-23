@@ -1,4 +1,4 @@
-export const getDataAndDate = (minute) => {
+export const getDataAndDate = minute => {
   let time;
   if (minute.trackTimeMillis / 1000 >= 3600) {
     const hours = Math.floor(minute.trackTimeMillis / (1000 * 60 * 60));
@@ -26,6 +26,6 @@ export const getDataAndDate = (minute) => {
 
   return {
     time,
-    formattedDate,
+    formattedDate
   };
 };

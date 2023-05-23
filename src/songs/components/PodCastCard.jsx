@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-export const PodCastCard = (song) => {
+export const PodCastCard = song => {
   return (
     <Link to={`podcast/${song.id.attributes['im:id']}`} className="links-songs">
       <div
@@ -12,7 +12,11 @@ export const PodCastCard = (song) => {
         <div className="container-all-info-cards">
           <main>
             <article className="image-song-container">
-              <img className="icon-song" src={song['im:image'][2]['label']} />
+              <img
+                className="icon-song"
+                src={song['im:image'][2]['label']}
+                alt="Imagen caratula podcast"
+              />
             </article>
             <article className="artist-container">
               <p>

@@ -16,17 +16,17 @@ export const ActualView = () => {
     setContextState({
       ...contextState,
       AllPodCasts: allSongsList,
-      Loading: false,
+      Loading: false
     });
   }, [allSongsList]);
 
-  const onHandleInputChange = (event) => {
+  const onHandleInputChange = event => {
     const { value } = event.target;
     setSearchText(value.toLowerCase());
   };
 
   useEffect(() => {
-    const filteredList = allSongsList.filter((podcast) => {
+    const filteredList = allSongsList.filter(podcast => {
       const label = podcast['im:name']['label'].toLowerCase();
       const author = podcast['im:artist']['label'].toLowerCase();
       return label.includes(searchText) || author.includes(searchText);
@@ -56,7 +56,7 @@ export const ActualView = () => {
         </div>
         <div className="container-fourSongs">
           <div data-testid="songs-container" className="songs-container">
-            {filteredList.map((song) => (
+            {filteredList.map(song => (
               <PodCastCard key={song['id']['attributes']['im:id']} {...song} />
             ))}
           </div>

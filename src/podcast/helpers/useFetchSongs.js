@@ -15,6 +15,6 @@ export const useFetchSongs = () => {
   };
 
   return {
-    allSongsList: allSongsList,
+    allSongsList: allSongsList
   };
 };

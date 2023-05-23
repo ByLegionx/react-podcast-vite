@@ -20,7 +20,7 @@ export const PodCastDescMusicPage = () => {
   useEffect(() => {
     setContextState({
       ...contextState,
-      Loading: true,
+      Loading: true
     });
     const getAllMinutes = async () => {
       await getPodcastMinutes(
@@ -35,11 +35,9 @@ export const PodCastDescMusicPage = () => {
     if (response !== null) {
       setContextState({
         ...contextState,
-        Loading: false,
+        Loading: false
       });
-      const foundPodcast = response.filter(
-        (podcast) => podcast.trackId == epId
-      );
+      const foundPodcast = response.filter(podcast => podcast.trackId === epId);
       setEpisode(foundPodcast);
     }
   }, [response]);
@@ -59,7 +57,7 @@ export const PodCastDescMusicPage = () => {
                     <p style={{ color: 'grey' }}>
                       <i
                         dangerouslySetInnerHTML={{
-                          __html: episode[0].description,
+                          __html: episode[0].description
                         }}
                       ></i>
                     </p>

@@ -23,7 +23,7 @@ export const PodcastTable = ({ response }) => {
           </thead>
           <tbody>
             {response.length > 0 &&
-              response.slice(1).map((minute) => {
+              response.slice(1).map(minute => {
                 const { time, formattedDate } = getDataAndDate(minute);
 
                 const { trackId, trackName } = minute;

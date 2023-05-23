@@ -15,7 +15,7 @@ export const PodCaster = () => {
             <b>Podcaster</b>
           </Link>
         </div>
-        {contextState.Loading == true ? (
+        {contextState.Loading === true ? (
           <div className="circle">
             <div className="inner-circle"></div>
           </div>

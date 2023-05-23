@@ -25,6 +25,7 @@ export const PodCastNavbar = () => {
                   src={
                     contextState.ActualViewPodCasts[0]['im:image'][2]['label']
                   }
+                  alt="Descripcion del podcast"
                 />
               </section>
             </section>
